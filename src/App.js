@@ -330,18 +330,23 @@ function Table({ columns, data }) {
   })
 
   const updateData = (par) => {
-    console.log(par);
-    var num = par.indexOf('a');
-    console.log(num);
-    var jsonobj = JSON.parse(par);
-    var hc = JSON.stringify(jsonobj.hiddenColumns);
-    var filt = jsonobj.filters;
-    var id = filt.id;
-    console.log(JSON.stringify(id));
-    console.log(hc);
-    console.log(filt);
-    setHiddenColumns(jsonobj.hiddenColumns);
-    //setFilter(jsonobj.filters.id, jsonobj.filters.value);
+    if(par == null || par.length == 0){
+      console.log("no parr");
+    } else {
+      console.log(par);
+      var num = par.indexOf('a');
+      console.log(num);
+      var jsonobj = JSON.parse(par);
+      var hc = JSON.stringify(jsonobj.hiddenColumns);
+      var filt = jsonobj.filters;
+      var id = filt.id;
+      console.log(JSON.stringify(id));
+      console.log(hc);
+      console.log(filt);
+      setHiddenColumns(jsonobj.hiddenColumns);
+      //setFilter(jsonobj.filters.id, jsonobj.filters.value);
+    }
+    
   }
 
   function ImportData() {
@@ -380,7 +385,7 @@ function Table({ columns, data }) {
 
   return (
     <>
-      <title>Subscription List</title>
+      <title>Subscription</title>
       <SplitPane>
         <h2 class="title">Subscription List</h2>
         <div class="buttons">
