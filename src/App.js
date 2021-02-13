@@ -90,13 +90,9 @@ function DefaultColumnFilter({
   )
 }
 
-// This is a custom filter UI for selecting
-// a unique option from a list
 function SelectColumnFilter({
   column: { filterValue, setFilter, preFilteredRows, id },
 }) {
-  // Calculate the options for filtering
-  // using the preFilteredRows
   const options = React.useMemo(() => {
     const options = new Set()
     preFilteredRows.forEach(row => {
@@ -105,7 +101,6 @@ function SelectColumnFilter({
     return [...options.values()]
   }, [id, preFilteredRows])
 
-  // Render a multi-select box
   return (
     <select
       value={filterValue}
@@ -126,8 +121,6 @@ function SelectColumnFilter({
 function SliderColumnFilter({
   column: { filterValue, setFilter, preFilteredRows, id },
 }) {
-  // Calculate the min and max
-  // using the preFilteredRows
 
   const [min, max] = React.useMemo(() => {
     let min = preFilteredRows.length ? preFilteredRows[0].values[id] : 0
@@ -209,10 +202,8 @@ function fuzzyTextFilterFn(rows, id, filterValue) {
   return matchSorter(rows, filterValue, { keys: [row => row.values[id]] })
 }
 
-// Let the table remove the filter if the string is empty
 fuzzyTextFilterFn.autoRemove = val => !val
 
-// Our table component
 function Table({ columns, data }) {
   const filterTypes = React.useMemo(
     () => ({
@@ -370,8 +361,6 @@ function Table({ columns, data }) {
     )
 }
 
-  // We don't want to render all of the rows for this example, so cap
-  // it for this use case
   const firstPageRows = rows.slice(0, 10)
 
   return (
@@ -439,7 +428,6 @@ function Table({ columns, data }) {
   )
 }
 
-// Define a custom filter filter function!
 function filterGreaterThan(rows, id, filterValue) {
   return rows.filter(row => {
     const rowValue = row.values[id]
@@ -447,10 +435,6 @@ function filterGreaterThan(rows, id, filterValue) {
   })
 }
 
-// This is an autoRemove method on the filter function that
-// when given the new filter value and returns true, the filter
-// will be automatically removed. Normally this is just an undefined
-// check, but here, we want to remove the filter if it's not a number
 filterGreaterThan.autoRemove = val => typeof val !== 'number'
 
 function App() {
