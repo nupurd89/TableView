@@ -1,0 +1,47 @@
+.view {
+    width: 700px;
+    padding-bottom: 30px;
+    margin-right: 20px;
+}
+.title {
+    color: black;
+}
+.tableheaders {
+    background-color: "#D0D0D0";
+    color: black;
+    text-align: left;
+}
+.cell {
+    height: 40px;
+    width: 100px;
+}
+.table {
+    border-style: hidden;
+    border: none;
+}
+
+.buttons {
+    margin-left: 200px;
+}
+
+.header {
+    width: 1000px;
+}
+
+.checkboxes {
+    margin-top: 15px;
+}
+
+.filterspacing {
+    margin-right: 20px;
+}
+
+.filterbutt {
+    float:right;
+    margin-right: 20px;
+}
+.center {
+    justify-content: center;
+    text-align: center;
+    float: center;
+}

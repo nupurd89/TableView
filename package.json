@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reactions/component": "^2.0.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
+    "evergreen-ui": "^5.1.2",
+    "match-sorter": "^6.2.0",
+    "namor": "^1.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
+    "react-split-pane": "^2.0.3",
+    "react-table": "^7.6.3",
+    "styled-components": "^4.3.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -16,6 +23,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.11",
+    "@rescripts/rescript-use-babel-config": "^0.0.8",
+    "@rescripts/rescript-use-eslint-config": "^0.0.9",
+    "babel-eslint": "10.1.0",
+    "eslint-config-prettier": "^6.15.0"
   },
   "eslintConfig": {
     "extends": [
