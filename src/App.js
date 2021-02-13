@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table'
-// A great library for fuzzy filtering/sorting items
 import {matchSorter} from 'match-sorter'
 import { TextInput, Popover, Pane, Button, Dialog } from 'evergreen-ui'
 import SplitPane from 'react-split-pane';
@@ -58,7 +57,6 @@ const IndeterminateCheckbox = React.forwardRef(
   }
 )
 
-// Define a default UI for filtering
 function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
@@ -76,7 +74,6 @@ function GlobalFilter({
   )
 }
 
-// Define a default UI for filtering
 function DefaultColumnFilter({
   column: { filterValue, preFilteredRows, setFilter },
 }) {
@@ -86,7 +83,7 @@ function DefaultColumnFilter({
     <input
       value={filterValue || ''}
       onChange={e => {
-        setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
+        setFilter(e.target.value || undefined) 
       }}
       placeholder={`Search ${count} records...`}
     />
@@ -126,9 +123,6 @@ function SelectColumnFilter({
   )
 }
 
-// This is a custom filter UI that uses a
-// slider to set the filter value between a column's
-// min and max values
 function SliderColumnFilter({
   column: { filterValue, setFilter, preFilteredRows, id },
 }) {
@@ -161,9 +155,6 @@ function SliderColumnFilter({
   )
 }
 
-// This is a custom UI for our 'between' or number range
-// filter. It uses two number boxes and filters rows to
-// ones that have values between the two
 function NumberRangeColumnFilter({
   column: { filterValue = [], preFilteredRows, setFilter, id },
 }) {
@@ -271,11 +262,11 @@ function Table({ columns, data }) {
     {
       columns,
       data,
-      defaultColumn, // Be sure to pass the defaultColumn option
+      defaultColumn, 
       filterTypes,
     },
-    useFilters, // useFilters!
-    useGlobalFilter // useGlobalFilter!
+    useFilters, 
+    useGlobalFilter 
   )
 
   const [filterInput, setFilterInput] = React.useState("");
